@@ -8,7 +8,7 @@ type TTokenProps = {
 }
 
 const ProtectedRoute = ({ children }: TTokenProps) => {
-    const { token } = useAppSelector(useCurrentToken);
+    const token = useAppSelector(useCurrentToken)
 
     if (!token) {
         return <Navigate to={"/login"} replace={true} />
